@@ -11,14 +11,6 @@ import scala.io.Source
  */
 object FoldTest {
   def main(args: Array[String]){
-    val line1 = "1";
-    val line2 = "* + 2 3 4";
-    val line3 = "/ 8 15";
-    val line4 = "* 2147483646 2"; //int overflows,  2 to the power of 31 minus 1 being the biggest int
-    val line5 = "* + 12 1 -2"; //int overflows,  2 to the power of 31 minus 1 being the biggest int
-
-    val list = List(line1) :+ line2 :+ line3 :+ line4 :+ line5
-
     val filePath =
       if(args.length > 0) args(0)
       else "polish_notations.dat"
