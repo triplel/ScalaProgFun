@@ -24,12 +24,12 @@ object FoldTest {
       else "polish_notations.dat"
 
     for(line <- Source.fromFile(filePath).getLines()){
-      val eval: Int = line.split(" ").foldRight(List[Int]())((elem, resultList) =>{
+      val eval: Int = line.split(" ").foldRight(List[Int]())((elem, list) =>{
         elem match {
-          case "+" => calculate(resultList, _ + _)
-          case "*" => calculate(resultList, _ * _)
-          case "/" => calculate(resultList, _ / _)  //default to floor() to achieve arbitrary rounding, change Int to Double and choose either floor() or ceil()
-          case _ => resultList :+ elem.toInt
+          case "+" => calculate(list, _ + _)
+          case "*" => calculate(list, _ * _)
+          case "/" => calculate(list, _ / _)  //default to floor() to achieve arbitrary rounding, change Int to Double and choose either floor() or ceil()
+          case _ => list :+ elem.toInt
         }
       }).head
 
